@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'AUMediaNormalizer_Example', :exclusive => true do
+  pod "AUMediaNormalizer", :path => "../"
+end
+
+target 'AUMediaNormalizer_Tests', :exclusive => true do
+  pod "AUMediaNormalizer", :path => "../"
+
+  
+end
