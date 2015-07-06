@@ -1,5 +1,14 @@
+source 'https://github.com/appunite/cocoapods-private.git'
 source 'https://github.com/CocoaPods/Specs.git'
-use_frameworks!
+
+xcodeproj 'AUMediaNormalizer.xcodeproj'
+
+platform :ios, '7.0'
+inhibit_all_warnings!
+
+pod 'SDAVAssetExportSession', git: 'https://github.com/appunite/SDAVAssetExportSession.git'
+#pod 'NYXImagesKit'
+#pod 'Mantle', '~> 1.4.1'
 
 target 'AUMediaNormalizer_Example', :exclusive => true do
   pod "AUMediaNormalizer", :path => "../"
@@ -8,5 +17,4 @@ end
 target 'AUMediaNormalizer_Tests', :exclusive => true do
   pod "AUMediaNormalizer", :path => "../"
 
-  
 end

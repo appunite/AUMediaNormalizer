@@ -8,6 +8,6 @@
 
 @import UIKit;
 
-@interface AUViewController : UIViewController
+@interface AUViewController : UICollectionViewController
 
 @end

@@ -26,13 +26,12 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
-
+  s.public_header_files = 'NetworkLib/**/*.h'
   s.source_files = 'Pod/Classes/**/*'
-  s.resource_bundles = {
-    'AUMediaNormalizer' => ['Pod/Assets/*.png']
-  }
+  s.frameworks = 'MobileCoreServices'
+  
+  s.dependency 'NYXImagesKit', '~> 2.3'
+  s.dependency 'SDAVAssetExportSession', '~> 0.0.2'
+  s.dependency 'Mantle', '~> 2.0.2'
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end

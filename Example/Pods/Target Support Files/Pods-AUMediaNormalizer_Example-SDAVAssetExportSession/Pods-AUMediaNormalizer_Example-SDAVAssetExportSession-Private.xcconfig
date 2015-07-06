@@ -1,0 +1,6 @@
+#include "Pods-AUMediaNormalizer_Example-SDAVAssetExportSession.xcconfig"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/SDAVAssetExportSession" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AUMediaNormalizer" "${PODS_ROOT}/Headers/Public/Mantle" "${PODS_ROOT}/Headers/Public/NYXImagesKit" "${PODS_ROOT}/Headers/Public/SDAVAssetExportSession"
+OTHER_LDFLAGS = -ObjC
+PODS_ROOT = ${SRCROOT}
+SKIP_INSTALL = YES

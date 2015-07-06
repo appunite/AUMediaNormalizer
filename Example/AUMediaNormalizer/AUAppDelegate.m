@@ -7,6 +7,7 @@
 //
 
 #import "AUAppDelegate.h"
+#import "KCAmazonFile.h"
 
 @implementation AUAppDelegate
 

@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		14D7302F51070AFD84230397 /* Pods_AUMediaNormalizer_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21AADE25EE42A6F6B1132AC6 /* Pods_AUMediaNormalizer_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		0237C3701B46C63200603626 /* AUMediaCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0237C36F1B46C63200603626 /* AUMediaCollectionViewCell.m */; };
+		0237C3731B46C8E200603626 /* AUMediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0237C3721B46C8E200603626 /* AUMediaViewController.m */; };
+		027E925E1B4AB98E00ECF9A9 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027E925D1B4AB98E00ECF9A9 /* AssetsLibrary.framework */; };
+		029E9A3E1B4A74F00080AAFB /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 029E9A3D1B4A74F00080AAFB /* MediaPlayer.framework */; };
+		029E9A471B4A8AB10080AAFB /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 029E9A451B4A8AB10080AAFB /* MBProgressHUD.m */; };
+		029E9A491B4A91230080AAFB /* hedgehog-bradattig.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 029E9A481B4A91230080AAFB /* hedgehog-bradattig.jpg */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -22,7 +27,9 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		D044364F9D01B06238ED0647 /* Pods_AUMediaNormalizer_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92EE60F831575471C352DF0 /* Pods_AUMediaNormalizer_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		A0CCCD26D9D741633DC0877B /* libPods-AUMediaNormalizer_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11ECC5365B81F623092C51A9 /* libPods-AUMediaNormalizer_Tests.a */; };
+		A246ECB497D17182FCF666FA /* libPods-AUMediaNormalizer_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36DBF78E71EEF95845E9004A /* libPods-AUMediaNormalizer_Example.a */; };
+		CBBE42B4DCE7B791D9504494 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA978D5BF43537CA695983C /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +43,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0237C36E1B46C63200603626 /* AUMediaCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AUMediaCollectionViewCell.h; path = AUMediaNormalizer/AUMediaCollectionViewCell.h; sourceTree = "<group>"; };
+		0237C36F1B46C63200603626 /* AUMediaCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AUMediaCollectionViewCell.m; path = AUMediaNormalizer/AUMediaCollectionViewCell.m; sourceTree = "<group>"; };
+		0237C3711B46C8E200603626 /* AUMediaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUMediaViewController.h; sourceTree = "<group>"; };
+		0237C3721B46C8E200603626 /* AUMediaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUMediaViewController.m; sourceTree = "<group>"; };
+		027E925D1B4AB98E00ECF9A9 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		029E9A3D1B4A74F00080AAFB /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		029E9A441B4A8AB10080AAFB /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		029E9A451B4A8AB10080AAFB /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		029E9A481B4A91230080AAFB /* hedgehog-bradattig.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "hedgehog-bradattig.jpg"; path = "../Tests/hedgehog-bradattig.jpg"; sourceTree = "<group>"; };
 		119720F9ED9B66ED9A58722C /* AUMediaNormalizer.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AUMediaNormalizer.podspec; path = ../AUMediaNormalizer.podspec; sourceTree = "<group>"; };
-		21AADE25EE42A6F6B1132AC6 /* Pods_AUMediaNormalizer_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AUMediaNormalizer_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		11ECC5365B81F623092C51A9 /* libPods-AUMediaNormalizer_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AUMediaNormalizer_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		36DBF78E71EEF95845E9004A /* libPods-AUMediaNormalizer_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AUMediaNormalizer_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		509B88C72F546D73BA533799 /* Pods-AUMediaNormalizer_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AUMediaNormalizer_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AUMediaNormalizer_Tests/Pods-AUMediaNormalizer_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		6003F58A195388D20070C39A /* AUMediaNormalizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = AUMediaNormalizer.app; path = AUMediaNormalizer_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6003F58A195388D20070C39A /* AUMediaNormalizer_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AUMediaNormalizer_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6003F591195388D20070C39A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -52,16 +69,18 @@
 		6003F5A5195388D20070C39A /* AUViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUViewController.h; sourceTree = "<group>"; };
 		6003F5A6195388D20070C39A /* AUViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AUViewController.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		6003F5AE195388D20070C39A /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Tests.xctest; path = AUMediaNormalizer_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6003F5AE195388D20070C39A /* AUMediaNormalizer_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AUMediaNormalizer_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6003F5B7195388D20070C39A /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		7049A697FF8B098147753941 /* Pods-AUMediaNormalizer_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AUMediaNormalizer_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-AUMediaNormalizer_Example/Pods-AUMediaNormalizer_Example.release.xcconfig"; sourceTree = "<group>"; };
+		79D2F4C281B576168A8E13EC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A23EFA868D1F7AC41B7BBADE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B50A26364026DB605AE9E229 /* Pods-AUMediaNormalizer_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AUMediaNormalizer_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AUMediaNormalizer_Tests/Pods-AUMediaNormalizer_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		B92EE60F831575471C352DF0 /* Pods_AUMediaNormalizer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AUMediaNormalizer_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEA978D5BF43537CA695983C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB152B5B8232F6713B9C5E3 /* Pods-AUMediaNormalizer_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AUMediaNormalizer_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AUMediaNormalizer_Example/Pods-AUMediaNormalizer_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		CF396877BAB3AEF0847DBB25 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		F1D799E777A2179C90640B14 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -72,10 +91,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				027E925E1B4AB98E00ECF9A9 /* AssetsLibrary.framework in Frameworks */,
+				029E9A3E1B4A74F00080AAFB /* MediaPlayer.framework in Frameworks */,
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				D044364F9D01B06238ED0647 /* Pods_AUMediaNormalizer_Example.framework in Frameworks */,
+				CBBE42B4DCE7B791D9504494 /* libPods.a in Frameworks */,
+				A246ECB497D17182FCF666FA /* libPods-AUMediaNormalizer_Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,13 +108,44 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				14D7302F51070AFD84230397 /* Pods_AUMediaNormalizer_Tests.framework in Frameworks */,
+				A0CCCD26D9D741633DC0877B /* libPods-AUMediaNormalizer_Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0237C36D1B46C5DB00603626 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				029E9A441B4A8AB10080AAFB /* MBProgressHUD.h */,
+				029E9A451B4A8AB10080AAFB /* MBProgressHUD.m */,
+				0237C36E1B46C63200603626 /* AUMediaCollectionViewCell.h */,
+				0237C36F1B46C63200603626 /* AUMediaCollectionViewCell.m */,
+			);
+			name = Views;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		024AD6AF1B46C45800E53290 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6003F5A5195388D20070C39A /* AUViewController.h */,
+				6003F5A6195388D20070C39A /* AUViewController.m */,
+				0237C3711B46C8E200603626 /* AUMediaViewController.h */,
+				0237C3721B46C8E200603626 /* AUMediaViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		024AD6B01B46C46600E53290 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
@@ -108,8 +161,8 @@
 		6003F58B195388D20070C39A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6003F58A195388D20070C39A /* AUMediaNormalizer.app */,
-				6003F5AE195388D20070C39A /* Tests.xctest */,
+				6003F58A195388D20070C39A /* AUMediaNormalizer_Example.app */,
+				6003F5AE195388D20070C39A /* AUMediaNormalizer_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,12 +170,15 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				027E925D1B4AB98E00ECF9A9 /* AssetsLibrary.framework */,
+				029E9A3D1B4A74F00080AAFB /* MediaPlayer.framework */,
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				B92EE60F831575471C352DF0 /* Pods_AUMediaNormalizer_Example.framework */,
-				21AADE25EE42A6F6B1132AC6 /* Pods_AUMediaNormalizer_Tests.framework */,
+				CEA978D5BF43537CA695983C /* libPods.a */,
+				36DBF78E71EEF95845E9004A /* libPods-AUMediaNormalizer_Example.a */,
+				11ECC5365B81F623092C51A9 /* libPods-AUMediaNormalizer_Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -132,10 +188,11 @@
 			children = (
 				6003F59C195388D20070C39A /* AUAppDelegate.h */,
 				6003F59D195388D20070C39A /* AUAppDelegate.m */,
-				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
-				6003F5A5195388D20070C39A /* AUViewController.h */,
-				6003F5A6195388D20070C39A /* AUViewController.m */,
+				0237C36D1B46C5DB00603626 /* Views */,
+				024AD6B01B46C46600E53290 /* Storyboards */,
+				024AD6AF1B46C45800E53290 /* Controllers */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
+				029E9A481B4A91230080AAFB /* hedgehog-bradattig.jpg */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
 			name = "Example for AUMediaNormalizer";
@@ -189,6 +246,8 @@
 				7049A697FF8B098147753941 /* Pods-AUMediaNormalizer_Example.release.xcconfig */,
 				B50A26364026DB605AE9E229 /* Pods-AUMediaNormalizer_Tests.debug.xcconfig */,
 				509B88C72F546D73BA533799 /* Pods-AUMediaNormalizer_Tests.release.xcconfig */,
+				A23EFA868D1F7AC41B7BBADE /* Pods.debug.xcconfig */,
+				79D2F4C281B576168A8E13EC /* Pods.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -204,7 +263,6 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				8307896EC195ABB472D68308 /* Embed Pods Frameworks */,
 				728E8725A17E75B38B236DBB /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -213,7 +271,7 @@
 			);
 			name = AUMediaNormalizer_Example;
 			productName = AUMediaNormalizer;
-			productReference = 6003F58A195388D20070C39A /* AUMediaNormalizer.app */;
+			productReference = 6003F58A195388D20070C39A /* AUMediaNormalizer_Example.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6003F5AD195388D20070C39A /* AUMediaNormalizer_Tests */ = {
@@ -224,7 +282,6 @@
 				6003F5AA195388D20070C39A /* Sources */,
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
-				37DACDD28645F558B793E6B8 /* Embed Pods Frameworks */,
 				E1298EFFB91BF31AE0AA5A35 /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -234,7 +291,7 @@
 			);
 			name = AUMediaNormalizer_Tests;
 			productName = AUMediaNormalizerTests;
-			productReference = 6003F5AE195388D20070C39A /* Tests.xctest */;
+			productReference = 6003F5AE195388D20070C39A /* AUMediaNormalizer_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -279,6 +336,7 @@
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+				029E9A491B4A91230080AAFB /* hedgehog-bradattig.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,21 +364,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		37DACDD28645F558B793E6B8 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AUMediaNormalizer_Tests/Pods-AUMediaNormalizer_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		728E8725A17E75B38B236DBB /* Copy Pods Resources */ = {
@@ -353,21 +396,6 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		8307896EC195ABB472D68308 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AUMediaNormalizer_Example/Pods-AUMediaNormalizer_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		E1298EFFB91BF31AE0AA5A35 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -391,8 +419,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* AUAppDelegate.m in Sources */,
+				0237C3731B46C8E200603626 /* AUMediaViewController.m in Sources */,
 				6003F5A7195388D20070C39A /* AUViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				0237C3701B46C63200603626 /* AUMediaCollectionViewCell.m in Sources */,
+				029E9A471B4A8AB10080AAFB /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,7 +554,7 @@
 		};
 		6003F5C1195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7049A697FF8B098147753941 /* Pods-AUMediaNormalizer_Example.release.xcconfig */;
+			baseConfigurationReference = CEB152B5B8232F6713B9C5E3 /* Pods-AUMediaNormalizer_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -538,7 +569,7 @@
 		};
 		6003F5C3195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B50A26364026DB605AE9E229 /* Pods-AUMediaNormalizer_Tests.debug.xcconfig */;
+			baseConfigurationReference = CEB152B5B8232F6713B9C5E3 /* Pods-AUMediaNormalizer_Example.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
