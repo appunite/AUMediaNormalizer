@@ -14,7 +14,7 @@
 #import "AUMediaCollectionViewCell.h"
 
 //Others
-#import <AUMediaNormalizer/GIMediaProcessing.h>
+#import <AUMediaNormalizer/AUMediaProcessing.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import "MBProgressHUD.h"
@@ -24,7 +24,7 @@
 @property (strong,nonatomic) NSMutableArray *mediaThumbs;
 @property (strong,nonatomic) NSMutableArray *isMovie;
 @property (strong,nonatomic) UIImagePickerController *imagePicker;
-@property (strong,nonatomic) GIMediaProcessing *mediaProcessing;
+@property (strong,nonatomic) AUMediaProcessing *mediaProcessing;
 
 @property (nonatomic,copy) void (^thumbnailBlock)(NSUUID *process, NSURL *fileURL, CGSize size, NSURL *thumbnailURL);
 @end
@@ -42,7 +42,7 @@
     _imagePicker.delegate = self;
     _imagePicker.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
     
-    _mediaProcessing = [[GIMediaProcessing alloc] init];
+    _mediaProcessing = [[AUMediaProcessing alloc] init];
     
     __weak AUViewController* _self = self;
     _thumbnailBlock = ^(NSUUID *process, NSURL *fileURL, CGSize size, NSURL *thumbnailURL) {

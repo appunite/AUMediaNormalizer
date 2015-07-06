@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Appunite. All rights reserved.
 //
 
-#import "GIMediaProcessing.h"
+#import "AUMediaProcessing.h"
 
 //Helpers
 #import "SDAVAssetExportSession.h"
@@ -15,7 +15,7 @@
 
 #import <MobileCoreServices/MobileCoreServices.h>
 
-@implementation GIMediaProcessing {
+@implementation AUMediaProcessing {
     NSOperationQueue *_queue;
     NSURL *_bucketURL;
 }
@@ -214,7 +214,7 @@
     [self createBucketStoragePath];
 
     // create file URL
-    NSURL *baseURL = [GIMediaProcessing bucketsStoragePath];
+    NSURL *baseURL = [AUMediaProcessing bucketsStoragePath];
     NSString *fileName = [[[NSUUID UUID] UUIDString] stringByAppendingPathExtension:ext];
     NSString *path = [self.bucket stringByAppendingPathComponent:fileName];
     return [NSURL URLWithString:path relativeToURL:baseURL];
@@ -234,7 +234,7 @@
 
 - (void)createBucketStoragePath {
     if (!_bucketURL) {
-        NSURL *bucketURL = [[GIMediaProcessing bucketsStoragePath] URLByAppendingPathComponent:_bucket];
+        NSURL *bucketURL = [[AUMediaProcessing bucketsStoragePath] URLByAppendingPathComponent:_bucket];
         
         // if folder doesn't exist, create it
         NSError *error = nil;

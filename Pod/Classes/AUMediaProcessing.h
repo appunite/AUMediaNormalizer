@@ -11,7 +11,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <Foundation/Foundation.h>
 
-@interface GIMediaProcessing : NSObject
+@interface AUMediaProcessing : NSObject
 // default generated thumbnail size
 @property (nonatomic, assign) CGSize thumbnailSize;
 

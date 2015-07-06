@@ -8,7 +8,7 @@
 
 @import XCTest;
 
-#import <AUMediaNormalizer/GIMediaProcessing.h>
+#import <AUMediaNormalizer/AUMediaProcessing.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <UIKit/UIKit.h>
 #import <AssetsLibrary/AssetsLibrary.h>
@@ -32,7 +32,7 @@
 }
 
 - (void)testProcessingImage{
-    GIMediaProcessing* mediaProcessing = [[GIMediaProcessing alloc] init];
+    AUMediaProcessing* mediaProcessing = [[AUMediaProcessing alloc] init];
     XCTAssertNotNil(mediaProcessing.bucket);
     
     XCTestExpectation *expectation = [self expectationWithDescription:@"ImageExpectation"];
@@ -66,7 +66,7 @@
 //This test will fail if photo library has no videos
 - (void)testProcessingVideo{
     
-    GIMediaProcessing* mediaProcessing = [[GIMediaProcessing alloc] init];
+    AUMediaProcessing* mediaProcessing = [[AUMediaProcessing alloc] init];
     XCTAssertNotNil(mediaProcessing.bucket);
     
     XCTestExpectation *expectation = [self expectationWithDescription:@"VideoExpectation"];

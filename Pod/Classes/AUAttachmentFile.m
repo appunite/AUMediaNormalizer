@@ -6,16 +6,16 @@
 //  Copyright (c) 2015 Appunite. All rights reserved.
 //
 
-#import "KCAttachmentFile.h"
+#import "AUAttachmentFile.h"
 
 //Others
-#import "GIMediaProcessing.h"
+#import "AUMediaProcessing.h"
 
-@interface KCAttachmentFile ()
-@property (nonatomic, strong, readwrite) KCAmazonFile *amazonDescriptor;
+@interface AUAttachmentFile ()
+@property (nonatomic, strong, readwrite) AUAmazonFile *amazonDescriptor;
 @end
 
-@implementation KCAttachmentFile
+@implementation AUAttachmentFile
 
 - (instancetype)initWithSourceURL:(NSURL *)sourceURL MIMEType:(NSString *)mimetype fileSize:(long long)fileSize coverURL:(NSURL *)coverURL attributes:(NSDictionary *)attributes identifier:(NSUUID *)identifier {
     self = [super init];
@@ -50,19 +50,19 @@
 #pragma mark URLs
 
 - (NSURL *)sourceURL {
-    return [NSURL URLWithString:_sourcePath relativeToURL:[GIMediaProcessing bucketsStoragePath]];
+    return [NSURL URLWithString:_sourcePath relativeToURL:[AUMediaProcessing bucketsStoragePath]];
 }
 
 - (NSURL *)coverURL {
-    return [NSURL URLWithString:_coverPath relativeToURL:[GIMediaProcessing bucketsStoragePath]];
+    return [NSURL URLWithString:_coverPath relativeToURL:[AUMediaProcessing bucketsStoragePath]];
 }
 
 #pragma mark -
 #pragma mark Helpers
 
-- (KCAttachmentFile *)attachmentFileWithAmazonDescriptor:(KCAmazonFile *)amazonFile {
+- (AUAttachmentFile *)attachmentFileWithAmazonDescriptor:(AUAmazonFile *)amazonFile {
     // create copy of attachment
-    KCAttachmentFile *attachment = [[KCAttachmentFile alloc] initWithSourceURL:self.sourceURL MIMEType:self.MIMEtype fileSize:self.fileSize coverURL:self.coverURL attributes:self.attributes identifier:self.uid];
+    AUAttachmentFile *attachment = [[AUAttachmentFile alloc] initWithSourceURL:self.sourceURL MIMEType:self.MIMEtype fileSize:self.fileSize coverURL:self.coverURL attributes:self.attributes identifier:self.uid];
     // assign amazon descriptor
     attachment.amazonDescriptor = amazonFile;
     return attachment;

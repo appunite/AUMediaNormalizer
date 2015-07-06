@@ -7,7 +7,7 @@
 //
 
 #import "Mantle.h"
-@interface KCAmazonFile : MTLModel <MTLJSONSerializing>
+@interface AUAmazonFile : MTLModel <MTLJSONSerializing>
 
 // unique idetifier of attachment file
 @property (nonatomic, strong, readonly) NSString *attachmentId;

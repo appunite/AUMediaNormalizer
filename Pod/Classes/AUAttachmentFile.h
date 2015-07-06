@@ -8,9 +8,9 @@
 
 #import "Mantle.h"
 //Models
-#import "KCAmazonFile.h"
+#import "AUAmazonFile.h"
 
-@interface KCAttachmentFile : MTLModel
+@interface AUAttachmentFile : MTLModel
 
 @property (nonatomic, strong, readonly) NSUUID *uid;
 @property (nonatomic, strong, readonly) NSString *MIMEtype;
@@ -27,7 +27,7 @@
 - (NSURL *)coverURL;
 
 // describe attachment destination
-@property (nonatomic, strong, readonly) KCAmazonFile *amazonDescriptor;
+@property (nonatomic, strong, readonly) AUAmazonFile *amazonDescriptor;
 
 // describe attachment destination
 @property (nonatomic, strong, readonly) NSDictionary *attributes;
@@ -54,5 +54,5 @@
 
 
 // create new instance of KCAttachmentFile extended by amazond descriptor
-- (KCAttachmentFile *)attachmentFileWithAmazonDescriptor:(KCAmazonFile *)amazonFile;
+- (AUAttachmentFile *)attachmentFileWithAmazonDescriptor:(AUAmazonFile *)amazonFile;
 @end

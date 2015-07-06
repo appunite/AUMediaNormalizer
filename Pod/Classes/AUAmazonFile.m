@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Appunite. All rights reserved.
 //
 
-#import "KCAmazonFile.h"
+#import "AUAmazonFile.h"
 #import "MTLJSONAdapter.h"
-@implementation KCAmazonFile
+@implementation AUAmazonFile
 
 - (instancetype)initWithAttachmentId:(NSString *)uid publicURL:(NSURL *)url {
     self = [super init];
