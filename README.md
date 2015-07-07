@@ -1,9 +1,6 @@
 # AUMediaNormalizer
 
-[![CI Status](http://img.shields.io/travis/Krzysztof/AUMediaNormalizer.svg?style=flat)](https://travis-ci.org/Krzysztof/AUMediaNormalizer)
-[![Version](https://img.shields.io/cocoapods/v/AUMediaNormalizer.svg?style=flat)](http://cocoapods.org/pods/AUMediaNormalizer)
-[![License](https://img.shields.io/cocoapods/l/AUMediaNormalizer.svg?style=flat)](http://cocoapods.org/pods/AUMediaNormalizer)
-[![Platform](https://img.shields.io/cocoapods/p/AUMediaNormalizer.svg?style=flat)](http://cocoapods.org/pods/AUMediaNormalizer)
+[![CI Status](http://img.shields.io/travis/appunite/AUMediaNormalizer.svg?style=flat)](https://travis-ci.org/appunite/AUMediaNormalizer)
 
 ## Usage
 
@@ -22,7 +19,7 @@ pod "AUMediaNormalizer"
 
 ## Author
 
-Krzysztof, krzysztof.kapitan@gmail.com
+Emil Wojtaszek, emil@appunite.com
 
 ## License
 
