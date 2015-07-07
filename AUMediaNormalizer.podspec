@@ -10,18 +10,12 @@
 Pod::Spec.new do |s|
   s.name             = "AUMediaNormalizer"
   s.version          = "0.1.0"
-  s.summary          = "A short description of AUMediaNormalizer."
-  s.description      = <<-DESC
-                       An optional longer description of AUMediaNormalizer
-
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
-                       DESC
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/AUMediaNormalizer"
+  s.summary          = "Create and store thumbnails for movies or images."
+  s.homepage         = "https://github.com/appunite/AUMediaNormalizer"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
-  s.author           = { "Krzysztof" => "krzysztof.kapitan@gmail.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/AUMediaNormalizer.git", :tag => s.version.to_s }
+  s.author           = { "Emil Wojtaszek" => "emil@appunite.com" } 
+  s.source           = { :git => "https://github.com/appunite/AUMediaNormalizer.git", :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.platform     = :ios, '7.0'
