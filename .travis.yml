@@ -4,8 +4,8 @@
 
 language: objective-c
 cache: 
-	- cocoapods
-	- bundler
+- cocoapods
+- bundler
 podfile: Example/Podfile
 before_install:
 - gem install cocoapods # Since Travis is not always on latest version
