@@ -20,6 +20,7 @@ pod "AUMediaNormalizer"
 ## Author
 
 Emil Wojtaszek, emil@appunite.com
+Krzysztof Kapitan, krzysztof.kapitan@appunite.com
 
 ## License
 
