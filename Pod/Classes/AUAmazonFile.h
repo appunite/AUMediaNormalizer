@@ -1,5 +1,5 @@
 //
-//  GIAmazonFile.h
+//  AUAmazonFile.h
 //  KingsChat
 //
 //  Created by Emil Wojtaszek on 29/04/15.
@@ -9,7 +9,7 @@
 #import "Mantle.h"
 @interface AUAmazonFile : MTLModel <MTLJSONSerializing>
 
-// unique idetifier of attachment file
+// unique identifier of attachment file
 @property (nonatomic, strong, readonly) NSString *attachmentId;
 
 // attachment descriptor
@@ -23,6 +23,6 @@
 
 - (instancetype)initWithAttachmentId:(NSString *)uid publicURL:(NSURL *)url NS_DESIGNATED_INITIALIZER;
 
-//
+// create request for amazon file
 - (NSMutableURLRequest *)amazonRequest;
 @end

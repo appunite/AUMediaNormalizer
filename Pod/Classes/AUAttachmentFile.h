@@ -1,5 +1,5 @@
 //
-//  KCAttachmentFile.h
+//  AUAttachmentFile.h
 //  KingsChat
 //
 //  Created by Emil Wojtaszek on 19/05/15.
@@ -32,7 +32,7 @@
 // describe attachment destination
 @property (nonatomic, strong, readonly) NSDictionary *attributes;
 
-//
+// 
 - (instancetype)initWithSourceURL:(NSURL *)sourceURL
                          MIMEType:(NSString *)mimetype
                          fileSize:(long long)fileSize
@@ -40,19 +40,19 @@
                        attributes:(NSDictionary *)attributes
                        identifier:(NSUUID *)identifier;
 
-// crate attachment with image/jpeg MIME type and save image dimensions in attributes
+// create attachment with image/jpeg MIME type and save image dimensions in attributes
 - (instancetype)initWithImageSourceURL:(NSURL *)sourceURL
                               coverURL:(NSURL *)coverURL
                                   size:(CGSize)size
                             identifier:(NSUUID *)identifier;
 
-// crate attachment with image/mp4 MIME type and save video dimensions in attributes
+// create attachment with image/mp4 MIME type and save video dimensions in attributes
 - (instancetype)initWithVideoSourceURL:(NSURL *)sourceURL
                               coverURL:(NSURL *)coverURL
                                   size:(CGSize)size
                             identifier:(NSUUID *)identifier;
 
 
-// create new instance of KCAttachmentFile extended by amazond descriptor
+// create new instance of AUAttachmentFile extended by amazond descriptor
 - (AUAttachmentFile *)attachmentFileWithAmazonDescriptor:(AUAmazonFile *)amazonFile;
 @end

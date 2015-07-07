@@ -1,5 +1,5 @@
 //
-//  KCAttachmentFile.m
+//  AUAttachmentFile.m
 //  KingsChat
 //
 //  Created by Emil Wojtaszek on 19/05/15.

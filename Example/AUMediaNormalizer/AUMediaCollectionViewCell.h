@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+/*! 
+ This is a custom CollectionViewCell class responsible for displaying thumbnail images. 
+ */
+
 @interface AUMediaCollectionViewCell : UICollectionViewCell
+
+///-----
+///@name Fields
+///-----
+
+/*!
+ UIImage that holds the thumbnail.
+ */
 @property (nonatomic,strong) UIImage *media;
 @end

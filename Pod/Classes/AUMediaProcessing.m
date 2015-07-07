@@ -1,5 +1,5 @@
 //
-//  GIMediaProcessing.m
+//  AUMediaProcessing.m
 //  KingsChat
 //
 //  Created by Emil Wojtaszek on 21/04/15.

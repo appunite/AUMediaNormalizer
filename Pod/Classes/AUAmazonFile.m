@@ -1,5 +1,5 @@
 //
-//  GIAmazonFile.m
+//  AUAmazonFile.m
 //  KingsChat
 //
 //  Created by Emil Wojtaszek on 29/04/15.
