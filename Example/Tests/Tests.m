@@ -63,7 +63,7 @@
         NSLog(@"%@",error);
     }];
 }
-
+/*
 - (void)testProcessingVideo{
     
     AUMediaProcessing* mediaProcessing = [[AUMediaProcessing alloc] init];
@@ -99,7 +99,7 @@
     [self waitForExpectationsWithTimeout:10 handler:^(NSError *error) {
         NSLog(@"%@",error);
     }];
-}
+}*/
 
 - (void)getAnyVideoURLWithCompletion:(void (^)(NSURL *url))completion{
     ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
