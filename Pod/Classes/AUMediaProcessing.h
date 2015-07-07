@@ -10,6 +10,8 @@
 #import <ImageIO/ImageIO.h>
 #import <AVFoundation/AVFoundation.h>
 #import <Foundation/Foundation.h>
+#import <SDAVAssetExportSession/SDAVAssetExportSession.h>
+#import <AUMediaNormalizer/AUAttachmentFile.h>
 
 @interface AUMediaProcessing : NSObject
 // default generated thumbnail size
@@ -36,7 +38,11 @@
  
  */
 - (NSUUID *)processImageWithPickerParams:(NSDictionary *)params
-                   completitionBlock:(void (^)(NSUUID *process, NSURL *fileURL, CGSize size, NSURL *thumbnailURL))block;
+                   thumbnailBlock:(void (^)(NSUUID *process, NSURL *fileURL, CGSize size, NSURL *thumbnailURL))block;
+
+- (NSUUID *)processImageWithPickerParams:(NSDictionary *)params
+                   attachmentBlock:(void (^)(AUAttachmentFile *attachmentFile))block;
+
 /*!
  This method is responsible mainly for creating thumbnail image, based on the provided media, and storing both thumbnail and the original content in the path specified by bucketStoragePath.
  
@@ -53,5 +59,21 @@
 - (NSUUID *)processVideoWithPickerParams:(NSDictionary *)params
                       thumbnailBlock:(void (^)(NSUUID *process, NSURL *fileURL, CGSize size, NSURL *thumbnailURL))thumbnailBlock
                    completitionBlock:(void (^)(NSUUID *process, AVAssetExportSessionStatus status, NSError *error))processingBlock;
+
+- (NSUUID *)processVideoWithPickerParams:(NSDictionary *)params
+                          thumbnailBlock:(void (^)(NSUUID *process, NSURL *fileURL, CGSize size, NSURL *thumbnailURL))thumbnailBlock
+                    encoderSettingsBlock:(void (^)(SDAVAssetExportSession *encoder))settingsBlock
+                       completitionBlock:(void (^)(NSUUID *process, AVAssetExportSessionStatus status, NSError *error))processingBlock;
+
+- (NSUUID *)processVideoWithPickerParams:(NSDictionary *)params
+                         attachmentBlock:(void (^)(AUAttachmentFile *attachmentFile))block
+                    encoderSettingsBlock:(void (^)(SDAVAssetExportSession *encoder))settingsBlock
+                       completitionBlock:(void (^)(NSUUID *process, AVAssetExportSessionStatus status, NSError *error))processingBlock;
+
+- (NSUUID *)processVideoWithPickerParams:(NSDictionary *)params
+                         attachmentBlock:(void (^)(AUAttachmentFile *attachmentFile))block
+                         completitionBlock:(void (^)(NSUUID *process, AVAssetExportSessionStatus status, NSError *error))processingBlock;
+
+
 
 @end

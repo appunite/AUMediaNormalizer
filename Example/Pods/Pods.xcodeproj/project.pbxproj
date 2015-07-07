@@ -33,7 +33,6 @@
 		28AAF742126A13451DBCA6BA /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE3C40009690539D5737D91A /* ImageIO.framework */; };
 		29F1C630BCF5EC6599116E29 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB8A844264866894C58AD2C /* QuartzCore.framework */; };
 		2BD295D5C681D9E238750223 /* NYXImagesHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 14291B265CC7F0FA935F599A /* NYXImagesHelper.h */; };
-		2C16BD1C233B6BBCC498CBD8 /* AUAmazonFile.h in Headers */ = {isa = PBXBuildFile; fileRef = D1DB92137BB4CA59C25E3DBD /* AUAmazonFile.h */; };
 		2C9AAA60A1606BCDBA3B1FFD /* MTLJSONAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 88620B9F70984480450844DF /* MTLJSONAdapter.h */; };
 		2CFE92521B1140211E257CE1 /* NSValueTransformer+MTLInversionAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A91A306E88B08FB49973CCD /* NSValueTransformer+MTLInversionAdditions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
 		2ED9AB14506D598582020849 /* UIImage+Reflection.h in Headers */ = {isa = PBXBuildFile; fileRef = A63E1D04039BE00C964A4267 /* UIImage+Reflection.h */; };
@@ -43,7 +42,6 @@
 		319E6F97DD60A6A37E91FC89 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 786564780FAEE9F4D7251962 /* Foundation.framework */; };
 		31BEF1225010935C184CB0A7 /* NSValueTransformer+MTLInversionAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 16310D934A805A8363FDC537 /* NSValueTransformer+MTLInversionAdditions.h */; };
 		31C5C93C399A3C20736B6673 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 786564780FAEE9F4D7251962 /* Foundation.framework */; };
-		31DFD15114D3DCEF321F286A /* AUAmazonFile.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA5D2FDF4648836057AE24F /* AUAmazonFile.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
 		360C849BFCCDBC401E1E886E /* Pods-AUMediaNormalizer_Example-SDAVAssetExportSession-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA0050199E58DBCCC5A2017 /* Pods-AUMediaNormalizer_Example-SDAVAssetExportSession-dummy.m */; };
 		39D8DDC51F7C96BEF690CFB6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 786564780FAEE9F4D7251962 /* Foundation.framework */; };
 		39D974AE91A9E64F4F648326 /* UIImage+Saving.m in Sources */ = {isa = PBXBuildFile; fileRef = 80CE757843C47E7B94CA6CA3 /* UIImage+Saving.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
@@ -54,7 +52,6 @@
 		417FB51BD38A785D402DA0E5 /* UIImage+Masking.m in Sources */ = {isa = PBXBuildFile; fileRef = 605B585BDEC8DAD80E6B0C0D /* UIImage+Masking.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
 		41AE04190C5C99CD0FEAC069 /* UIImage+Filtering.m in Sources */ = {isa = PBXBuildFile; fileRef = 655956F7269F19046B247BB5 /* UIImage+Filtering.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
 		41C926D929D03FA76A780892 /* MTLModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 0074410EC0AB4A26A6572F0C /* MTLModel.h */; };
-		43ACBF2440928A4DDD61D96B /* AUAmazonFile.h in Headers */ = {isa = PBXBuildFile; fileRef = D1DB92137BB4CA59C25E3DBD /* AUAmazonFile.h */; };
 		444916089907A2B6BC6E03CA /* EXTKeyPathCoding.h in Headers */ = {isa = PBXBuildFile; fileRef = 79B3DF3948F6A5B404EDD632 /* EXTKeyPathCoding.h */; };
 		46937C2C29593A0F9ED6BEBE /* Pods-AUMediaNormalizer_Tests-SDAVAssetExportSession-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 02269FA6B2B4AD3D1450177C /* Pods-AUMediaNormalizer_Tests-SDAVAssetExportSession-dummy.m */; };
 		46B135DCE555BA34C38E132A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DB8A844264866894C58AD2C /* QuartzCore.framework */; };
@@ -108,7 +105,6 @@
 		975614E23A85949CC05DC234 /* SDAVAssetExportSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E94268B4F61412B40599AA /* SDAVAssetExportSession.h */; };
 		97D28A722D8300FF003984D3 /* MTLReflection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8746D7450248F27D952BE57D /* MTLReflection.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
 		992C84EB00679D82ADF2C5A7 /* UIImage+Enhancing.h in Headers */ = {isa = PBXBuildFile; fileRef = AB58C13F239DED7AEC2CF935 /* UIImage+Enhancing.h */; };
-		9992A5F29357342B00A8EA3A /* AUAmazonFile.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA5D2FDF4648836057AE24F /* AUAmazonFile.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
 		9A3713CA62DF62E41676BE51 /* SDAVAssetExportSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 34E94268B4F61412B40599AA /* SDAVAssetExportSession.h */; };
 		9D13079E3973465A66EAF3B4 /* UIView+Screenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B4AAAC6660A1806113A497D /* UIView+Screenshot.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
 		9D4EF8A224ADDD6242E2F2C4 /* UIImage+Enhancing.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C7A90E4A582F7A4FBF6A0EB /* UIImage+Enhancing.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0 -w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
@@ -413,8 +409,6 @@
 		C3A1ED09288B1389E23454EB /* Pods-AUMediaNormalizer_Example-AUMediaNormalizer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AUMediaNormalizer_Example-AUMediaNormalizer-prefix.pch"; sourceTree = "<group>"; };
 		C9392979FC88C1D7840804CC /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		CE3C40009690539D5737D91A /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
-		CFA5D2FDF4648836057AE24F /* AUAmazonFile.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = AUAmazonFile.m; sourceTree = "<group>"; };
-		D1DB92137BB4CA59C25E3DBD /* AUAmazonFile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AUAmazonFile.h; sourceTree = "<group>"; };
 		D280269C4808C15148FE59D9 /* Pods-AUMediaNormalizer_Example-AUMediaNormalizer-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AUMediaNormalizer_Example-AUMediaNormalizer-Private.xcconfig"; sourceTree = "<group>"; };
 		D4AAACE42D12FC431304784E /* libPods-AUMediaNormalizer_Tests-Mantle.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AUMediaNormalizer_Tests-Mantle.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4FC753C0C8C3DA9B8269D9B /* Pods-SDAVAssetExportSession-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-SDAVAssetExportSession-dummy.m"; path = "../Pods-SDAVAssetExportSession/Pods-SDAVAssetExportSession-dummy.m"; sourceTree = "<group>"; };
@@ -832,8 +826,6 @@
 		F2004758F5648CBCC2C1BEA9 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				D1DB92137BB4CA59C25E3DBD /* AUAmazonFile.h */,
-				CFA5D2FDF4648836057AE24F /* AUAmazonFile.m */,
 				4082CF34F9AC8C4AD27AF71D /* AUAttachmentFile.h */,
 				D67A721F6BFC3F9FE8BDAA53 /* AUAttachmentFile.m */,
 				0A6B39995E3ADA4FB3A193C6 /* AUMediaProcessing.h */,
@@ -889,7 +881,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C16BD1C233B6BBCC498CBD8 /* AUAmazonFile.h in Headers */,
 				46E029F8A48E7937C1EA6C1C /* AUAttachmentFile.h in Headers */,
 				71F8A1827C9CECF8D21C4138 /* AUMediaProcessing.h in Headers */,
 			);
@@ -971,7 +962,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43ACBF2440928A4DDD61D96B /* AUAmazonFile.h in Headers */,
 				5A586561BC46F7E37F1FEE8D /* AUAttachmentFile.h in Headers */,
 				D8BDA66F4061B0D4550EFC58 /* AUMediaProcessing.h in Headers */,
 			);
@@ -1321,7 +1311,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9992A5F29357342B00A8EA3A /* AUAmazonFile.m in Sources */,
 				6C7C4A4E7063B54A6533E39D /* AUAttachmentFile.m in Sources */,
 				60F6CB52E414582ECE9C8DDF /* AUMediaProcessing.m in Sources */,
 				C4A98B5974B6172392BF2D5D /* Pods-AUMediaNormalizer_Tests-AUMediaNormalizer-dummy.m in Sources */,
@@ -1415,7 +1404,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31DFD15114D3DCEF321F286A /* AUAmazonFile.m in Sources */,
 				DF969ECCC70A6F8FF2B2B2C9 /* AUAttachmentFile.m in Sources */,
 				591514167FBD3B094E88635B /* AUMediaProcessing.m in Sources */,
 				15824302DCFB913D3B102CB6 /* Pods-AUMediaNormalizer_Example-AUMediaNormalizer-dummy.m in Sources */,

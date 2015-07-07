@@ -69,7 +69,7 @@
     [picker dismissViewControllerAnimated:YES completion:nil];
     
     if(!movie){
-        [_mediaProcessing processImageWithPickerParams:info completitionBlock:_thumbnailBlock];
+        [_mediaProcessing processImageWithPickerParams:info thumbnailBlock:_thumbnailBlock];
     }else{
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [_mediaProcessing processVideoWithPickerParams:info thumbnailBlock:_thumbnailBlock

@@ -8,7 +8,6 @@
 
 #import "Mantle.h"
 //Models
-#import "AUAmazonFile.h"
 
 @interface AUAttachmentFile : MTLModel
 
@@ -25,9 +24,6 @@
 // relative path to cover thumbnail image file
 @property (nonatomic, strong, readonly) NSString *coverPath;
 - (NSURL *)coverURL;
-
-// describe attachment destination
-@property (nonatomic, strong, readonly) AUAmazonFile *amazonDescriptor;
 
 // describe attachment destination
 @property (nonatomic, strong, readonly) NSDictionary *attributes;
@@ -52,7 +48,4 @@
                                   size:(CGSize)size
                             identifier:(NSUUID *)identifier;
 
-
-// create new instance of AUAttachmentFile extended by amazond descriptor
-- (AUAttachmentFile *)attachmentFileWithAmazonDescriptor:(AUAmazonFile *)amazonFile;
 @end

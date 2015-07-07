@@ -12,7 +12,6 @@
 #import "AUMediaProcessing.h"
 
 @interface AUAttachmentFile ()
-@property (nonatomic, strong, readwrite) AUAmazonFile *amazonDescriptor;
 @end
 
 @implementation AUAttachmentFile
@@ -55,17 +54,6 @@
 
 - (NSURL *)coverURL {
     return [NSURL URLWithString:_coverPath relativeToURL:[AUMediaProcessing bucketsStoragePath]];
-}
-
-#pragma mark -
-#pragma mark Helpers
-
-- (AUAttachmentFile *)attachmentFileWithAmazonDescriptor:(AUAmazonFile *)amazonFile {
-    // create copy of attachment
-    AUAttachmentFile *attachment = [[AUAttachmentFile alloc] initWithSourceURL:self.sourceURL MIMEType:self.MIMEtype fileSize:self.fileSize coverURL:self.coverURL attributes:self.attributes identifier:self.uid];
-    // assign amazon descriptor
-    attachment.amazonDescriptor = amazonFile;
-    return attachment;
 }
 
 @end

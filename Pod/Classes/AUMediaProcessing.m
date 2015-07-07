@@ -50,10 +50,10 @@
 }
 
 #pragma mark -
-#pragma mark Processing
+#pragma mark Processing Image
 
 - (NSUUID *)processImageWithPickerParams:(NSDictionary *)info
-                       completitionBlock:(void (^)(NSUUID *process, NSURL *fileURL, CGSize size, NSURL *thumbnailURL))block {
+                       thumbnailBlock:(void (^)(NSUUID *process, NSURL *fileURL, CGSize size, NSURL *thumbnailURL))block {
 
     // generate unique process id
     NSUUID *process = [NSUUID UUID];
@@ -97,13 +97,22 @@
     return process;
 }
 
-- (NSUUID *)processVideoWithPickerParams:(NSDictionary *)info
-                          thumbnailBlock:(void (^)(NSUUID *process, NSURL *fileURL, CGSize size, NSURL *thumbnailURL))thumbnailBlock
-                       completitionBlock:(void (^)(NSUUID *process, AVAssetExportSessionStatus status, NSError *error))processingBlock {
-    
-    // generate unique process id
-    NSUUID *process = [NSUUID UUID];
+- (NSUUID *)processImageWithPickerParams:(NSDictionary *)info attachmentBlock:(void (^)(AUAttachmentFile *attachmentFile))block{
+    return [self processImageWithPickerParams:info
+            thumbnailBlock:^(NSUUID *process, NSURL *fileURL, CGSize size, NSURL *thumbnailURL) {
+                AUAttachmentFile *attachment = [[AUAttachmentFile alloc] initWithImageSourceURL:fileURL coverURL:thumbnailURL size:size identifier:process];
+                block(attachment);
+            }];
+}
 
+
+#pragma mark -
+#pragma mark Processing Video
+
+-(NSUUID *)processVideoWithPickerParams:(NSDictionary *)info thumbnailBlock:(void (^)(NSUUID *process, NSURL *fileURL, CGSize size, NSURL *thumbnailURL))thumbnailBlock encoderSettingsBlock:(void (^)(SDAVAssetExportSession *encoder))settingsBlock completitionBlock:(void (^)(NSUUID *process, AVAssetExportSessionStatus status, NSError *error))processingBlock{
+    
+    NSUUID *process = [NSUUID UUID];
+    
     //
     NSString* mediaType = [info objectForKey:UIImagePickerControllerMediaType];
     BOOL isVideo = CFStringCompare((__bridge CFStringRef) mediaType, kUTTypeMovie, 0) == kCFCompareEqualTo;
@@ -111,7 +120,7 @@
     
     // enque operation
     [_queue addOperationWithBlock:^{
-
+        
         // access video URL
         NSURL *mediaURL = [info objectForKey:UIImagePickerControllerMediaURL];
         
@@ -120,17 +129,17 @@
         
         // crate thumbnale image (aspect fill)
         UIImage *thumbImage = [self generateThumbnail:videThumb];
-
+        
         // generate jpeg data for thumbnail
         NSData *jpegData = UIImageJPEGRepresentation(thumbImage, 0.95f);
-
+        
         // generate random file paths
         NSURL *videoURL = [self temporaryMediaFileURLWithExtension:@"mp4"];
         NSURL *thumbnailURL = [self temporaryMediaFileURLWithExtension:@"jpg"];
         
         // write thumbnail to temporary location
         [jpegData writeToURL:thumbnailURL options:NSDataWritingFileProtectionNone error:NULL];
-
+        
         // fire thubnail block
         dispatch_async(dispatch_get_main_queue(), ^{
             thumbnailBlock(process, videoURL, videThumb.size, thumbnailURL);
@@ -138,28 +147,32 @@
         
         // access video URL
         AVAsset *avAsset = [AVAsset assetWithURL:mediaURL];
-      
-        // create export session
-        SDAVAssetExportSession *encoder = [SDAVAssetExportSession.alloc initWithAsset:avAsset];
-        encoder.outputFileType = AVFileTypeMPEG4;
-        encoder.shouldOptimizeForNetworkUse = YES;
-        encoder.outputURL = videoURL;
-        encoder.videoSettings = @{
-            AVVideoCodecKey: AVVideoCodecH264,
-            AVVideoWidthKey: @1920,
-            AVVideoHeightKey: @1080,
-            AVVideoCompressionPropertiesKey: @{
-                  AVVideoAverageBitRateKey: @6000000,
-                  AVVideoProfileLevelKey: AVVideoProfileLevelH264High40,
-            },
-        };
-        encoder.audioSettings = @{
-            AVFormatIDKey: @(kAudioFormatMPEG4AAC),
-            AVNumberOfChannelsKey: @2,
-            AVSampleRateKey: @44100,
-            AVEncoderBitRateKey: @128000,
-        };
         
+        // create export session
+        __block SDAVAssetExportSession *encoder = [SDAVAssetExportSession.alloc initWithAsset:avAsset];
+        if(settingsBlock){
+            settingsBlock(encoder);
+        }else{
+    
+            encoder.outputFileType = AVFileTypeMPEG4;
+            encoder.shouldOptimizeForNetworkUse = YES;
+            encoder.outputURL = videoURL;
+            encoder.videoSettings = @{
+                                      AVVideoCodecKey: AVVideoCodecH264,
+                                      AVVideoWidthKey: @1920,
+                                      AVVideoHeightKey: @1080,
+                                      AVVideoCompressionPropertiesKey: @{
+                                              AVVideoAverageBitRateKey: @6000000,
+                                              AVVideoProfileLevelKey: AVVideoProfileLevelH264High40,
+                                              },
+                                      };
+            encoder.audioSettings = @{
+                                      AVFormatIDKey: @(kAudioFormatMPEG4AAC),
+                                      AVNumberOfChannelsKey: @2,
+                                      AVSampleRateKey: @44100,
+                                      AVEncoderBitRateKey: @128000,
+                                      };
+        }
         // call completition block
         [encoder exportAsynchronouslyWithCompletionHandler:^{
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -169,6 +182,28 @@
     }];
     
     return process;
+    
+}
+
+- (NSUUID *)processVideoWithPickerParams:(NSDictionary *)info
+                          thumbnailBlock:(void (^)(NSUUID *process, NSURL *fileURL, CGSize size, NSURL *thumbnailURL))thumbnailBlock
+                       completitionBlock:(void (^)(NSUUID *process, AVAssetExportSessionStatus status, NSError *error))processingBlock {
+    
+    return [self processVideoWithPickerParams:info thumbnailBlock:thumbnailBlock encoderSettingsBlock:nil completitionBlock:processingBlock];
+}
+
+- (NSUUID *)processVideoWithPickerParams:(NSDictionary *)info attachmentBlock:(void (^)(AUAttachmentFile *attachmentFile))block encoderSettingsBlock:(void (^)(SDAVAssetExportSession *))settingsBlock completitionBlock:(void (^)(NSUUID *process, AVAssetExportSessionStatus status, NSError *error))processingBlock{
+    
+    return [self processVideoWithPickerParams:info
+                thumbnailBlock:^(NSUUID *process, NSURL *fileURL, CGSize size, NSURL *thumbnailURL) {
+                    AUAttachmentFile *attachment = [[AUAttachmentFile alloc] initWithVideoSourceURL:fileURL coverURL:thumbnailURL size:size identifier:process];
+                    block(attachment);
+                }
+                encoderSettingsBlock:settingsBlock completitionBlock:processingBlock];
+}
+
+- (NSUUID *)processVideoWithPickerParams:(NSDictionary *)info attachmentBlock:(void (^)(AUAttachmentFile *attachmentFile))block completitionBlock:(void (^)(NSUUID *process, AVAssetExportSessionStatus status, NSError *error))processingBlock{
+    return [self processVideoWithPickerParams:info attachmentBlock:block encoderSettingsBlock:nil completitionBlock:processingBlock];
 }
 
 #pragma mark -
