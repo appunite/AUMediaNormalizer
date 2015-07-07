@@ -1,6 +1,6 @@
 # AUMediaNormalizer
 
-[![CI Status](http://img.shields.io/travis/Krzysztof/AUMediaNormalizer.svg?style=flat)](https://travis-ci.org/appunite/AUMediaNormalizer)
+[![CI Status](http://img.shields.io/travis/appunite/AUMediaNormalizer.svg?style=flat)](https://travis-ci.org/appunite/AUMediaNormalizer)
 
 ## Usage
 
