@@ -12,7 +12,8 @@
 		027E925E1B4AB98E00ECF9A9 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 027E925D1B4AB98E00ECF9A9 /* AssetsLibrary.framework */; };
 		029E9A3E1B4A74F00080AAFB /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 029E9A3D1B4A74F00080AAFB /* MediaPlayer.framework */; };
 		029E9A471B4A8AB10080AAFB /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 029E9A451B4A8AB10080AAFB /* MBProgressHUD.m */; };
-		029E9A491B4A91230080AAFB /* hedgehog-bradattig.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 029E9A481B4A91230080AAFB /* hedgehog-bradattig.jpg */; };
+		029E9A491B4A91230080AAFB /* example_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 029E9A481B4A91230080AAFB /* example_image.jpg */; };
+		02F7E14B1B4BC1B400DF921F /* example_movie.mov in Resources */ = {isa = PBXBuildFile; fileRef = 02F7E14A1B4BC1B400DF921F /* example_movie.mov */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -51,7 +52,8 @@
 		029E9A3D1B4A74F00080AAFB /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		029E9A441B4A8AB10080AAFB /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		029E9A451B4A8AB10080AAFB /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		029E9A481B4A91230080AAFB /* hedgehog-bradattig.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "hedgehog-bradattig.jpg"; path = "../Tests/hedgehog-bradattig.jpg"; sourceTree = "<group>"; };
+		029E9A481B4A91230080AAFB /* example_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = example_image.jpg; sourceTree = "<group>"; };
+		02F7E14A1B4BC1B400DF921F /* example_movie.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = example_movie.mov; sourceTree = "<group>"; };
 		119720F9ED9B66ED9A58722C /* AUMediaNormalizer.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AUMediaNormalizer.podspec; path = ../AUMediaNormalizer.podspec; sourceTree = "<group>"; };
 		11ECC5365B81F623092C51A9 /* libPods-AUMediaNormalizer_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AUMediaNormalizer_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		36DBF78E71EEF95845E9004A /* libPods-AUMediaNormalizer_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AUMediaNormalizer_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,7 +194,6 @@
 				024AD6B01B46C46600E53290 /* Storyboards */,
 				024AD6AF1B46C45800E53290 /* Controllers */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
-				029E9A481B4A91230080AAFB /* hedgehog-bradattig.jpg */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
 			name = "Example for AUMediaNormalizer";
@@ -214,6 +215,8 @@
 			isa = PBXGroup;
 			children = (
 				6003F5BB195388D20070C39A /* Tests.m */,
+				029E9A481B4A91230080AAFB /* example_image.jpg */,
+				02F7E14A1B4BC1B400DF921F /* example_movie.mov */,
 				6003F5B6195388D20070C39A /* Supporting Files */,
 			);
 			path = Tests;
@@ -336,7 +339,8 @@
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
-				029E9A491B4A91230080AAFB /* hedgehog-bradattig.jpg in Resources */,
+				02F7E14B1B4BC1B400DF921F /* example_movie.mov in Resources */,
+				029E9A491B4A91230080AAFB /* example_image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

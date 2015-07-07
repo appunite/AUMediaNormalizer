@@ -37,7 +37,7 @@
     
     XCTestExpectation *expectation = [self expectationWithDescription:@"ImageExpectation"];
     
-    UIImage *exampleImage = [UIImage imageNamed:@"hedgehog-bradattig.jpg"];
+    UIImage *exampleImage = [UIImage imageNamed:@"example_image.jpg"];
     
     NSMutableDictionary *info = [NSMutableDictionary new];
     [info setObject:@"public.image" forKey:UIImagePickerControllerMediaType];
@@ -55,7 +55,7 @@
         
         XCTAssertEqual(size.width, fullImage.size.width);
         XCTAssertEqual(size.height, fullImage.size.height);
-
+        
         [expectation fulfill];
     }];
     
@@ -63,7 +63,7 @@
         NSLog(@"%@",error);
     }];
 }
-/*
+
 - (void)testProcessingVideo{
     
     AUMediaProcessing* mediaProcessing = [[AUMediaProcessing alloc] init];
@@ -71,62 +71,26 @@
 
     XCTestExpectation *expectation = [self expectationWithDescription:@"VideoExpectation"];
     
+    NSString* path = [[NSBundle mainBundle] pathForResource:@"example_movie" ofType:@".mov"];
+    NSURL *url = [NSURL fileURLWithPath:path];
     
-    [self getAnyVideoURLWithCompletion:^(NSURL *url) {
+    NSMutableDictionary *info = [NSMutableDictionary new];
+    [info setObject:@"public.movie" forKey:UIImagePickerControllerMediaType];
+    [info setObject:url forKey:UIImagePickerControllerMediaURL];
+    [mediaProcessing processVideoWithPickerParams:info thumbnailBlock:^(NSUUID *process, NSURL *fileURL, CGSize size, NSURL *thumbnailURL) {
         
-        if(!url){
-            NSLog(@"Could not find any video");
-            [expectation fulfill];
-            return;
-        }
+        XCTAssertNotNil(fileURL);
+        XCTAssertNotNil(thumbnailURL);
+        UIImage* thumbnailImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:thumbnailURL]];
+        XCTAssertNotNil(thumbnailImage);
         
-        NSMutableDictionary *info = [NSMutableDictionary new];
-        [info setObject:@"public.movie" forKey:UIImagePickerControllerMediaType];
-        [info setObject:url forKey:UIImagePickerControllerMediaURL];
-        [mediaProcessing processVideoWithPickerParams:info thumbnailBlock:^(NSUUID *process, NSURL *fileURL, CGSize size, NSURL *thumbnailURL) {
-            
-            XCTAssertNotNil(fileURL);
-            XCTAssertNotNil(thumbnailURL);
-            UIImage* thumbnailImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:thumbnailURL]];
-            XCTAssertNotNil(thumbnailImage);
-            
-        } completitionBlock:^(NSUUID *process, AVAssetExportSessionStatus status, NSError *error) {
-            [expectation fulfill];
-        }];
-
+    } completitionBlock:^(NSUUID *process, AVAssetExportSessionStatus status, NSError *error) {
+        [expectation fulfill];
     }];
-    
+
     [self waitForExpectationsWithTimeout:10 handler:^(NSError *error) {
         NSLog(@"%@",error);
     }];
-}*/
-
-- (void)getAnyVideoURLWithCompletion:(void (^)(NSURL *url))completion{
-    ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
-    NSMutableArray* assetURLDictionaries = [[NSMutableArray alloc] init];
-    
-    __block NSURL* url;
-    
-    void (^assetEnumerator)( ALAsset *, NSUInteger, BOOL *) = ^(ALAsset *result, NSUInteger index, BOOL *stop) {
-        if(result != nil) {
-            if([[result valueForProperty:ALAssetPropertyType] isEqualToString:ALAssetTypeVideo]) {
-                [assetURLDictionaries addObject:[result valueForProperty:ALAssetPropertyURLs]];
-    
-                url= (NSURL*) [[result defaultRepresentation] url];
-            }
-        }
-    };
-    
-    void (^ assetGroupEnumerator) ( ALAssetsGroup *, BOOL *)= ^(ALAssetsGroup *group, BOOL *stop){
-        if(group != nil) {
-            [group enumerateAssetsUsingBlock:assetEnumerator];
-            completion(url);
-        }
-    };
-    
-    [library enumerateGroupsWithTypes:ALAssetsGroupAll
-                           usingBlock:assetGroupEnumerator
-                         failureBlock:^(NSError *error) {NSLog(@"A problem occurred");}];
 }
 
 @end
