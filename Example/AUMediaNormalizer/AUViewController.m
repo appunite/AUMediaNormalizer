@@ -17,6 +17,7 @@
 #import <AUMediaNormalizer/AUMediaProcessing.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <MediaPlayer/MediaPlayer.h>
+
 #import "MBProgressHUD.h"
 
 @interface AUViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
@@ -74,7 +75,7 @@
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [_mediaProcessing processVideoWithPickerParams:info thumbnailBlock:_thumbnailBlock
          completitionBlock:^(NSUUID *process, AVAssetExportSessionStatus status, NSError *error) {
-            [hud hide:YES];
+             [hud hide:YES];
         }];
         
     }

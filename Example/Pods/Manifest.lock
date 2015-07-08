@@ -6,11 +6,13 @@ PODS:
   - Mantle (2.0.2):
     - Mantle/extobjc (= 2.0.2)
   - Mantle/extobjc (2.0.2)
+  - MBProgressHUD (0.9.1)
   - NYXImagesKit (2.3)
   - SDAVAssetExportSession (0.0.2)
 
 DEPENDENCIES:
   - AUMediaNormalizer (from `../`)
+  - MBProgressHUD (~> 0.9.1)
   - SDAVAssetExportSession (from `https://github.com/appunite/SDAVAssetExportSession.git`)
 
 EXTERNAL SOURCES:
@@ -25,8 +27,9 @@ CHECKOUT OPTIONS:
     :git: https://github.com/appunite/SDAVAssetExportSession.git
 
 SPEC CHECKSUMS:
-  AUMediaNormalizer: 537b6f2e14416dc2e6a7357d3ca1c2644a63395a
+  AUMediaNormalizer: dee5bb28d972662eb54c47709732312943dd3239
   Mantle: 967fd31ea0220890b2e76589198996b534bb3fb1
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   NYXImagesKit: 8163e3335a40eaa173ca5bbbf81fafb57d3947eb
   SDAVAssetExportSession: 7cfcc8c78123aed47256297853ececa48f057c92
 

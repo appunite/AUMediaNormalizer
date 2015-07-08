@@ -1,15 +1,14 @@
 {
   "name": "AUMediaNormalizer",
   "version": "0.1.0",
-  "summary": "A short description of AUMediaNormalizer.",
-  "description": "                       An optional longer description of AUMediaNormalizer\n\n                       * Markdown format.\n                       * Don't worry about the indent, we strip it!\n",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/AUMediaNormalizer",
+  "summary": "Create and store thumbnails for movies or images.",
+  "homepage": "https://github.com/appunite/AUMediaNormalizer",
   "license": "MIT",
   "authors": {
-    "Krzysztof": "krzysztof.kapitan@gmail.com"
+    "Emil Wojtaszek": "emil@appunite.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/AUMediaNormalizer.git",
+    "git": "https://github.com/appunite/AUMediaNormalizer.git",
     "tag": "0.1.0"
   },
   "platforms": {

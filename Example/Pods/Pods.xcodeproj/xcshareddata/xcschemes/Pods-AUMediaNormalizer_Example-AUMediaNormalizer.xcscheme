@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7B1AE43DBB26C4B3BA36391A"
+               BlueprintIdentifier = "8CAA19A05BADD1A4BE4FCC57"
                BuildableName = "libPods-AUMediaNormalizer_Example-AUMediaNormalizer.a"
                BlueprintName = "Pods-AUMediaNormalizer_Example-AUMediaNormalizer"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -95,7 +95,7 @@
  
  * @property attributes
  
- * @abstract additional information about source file.
+ * @abstract additional information about source media.
  * @discussion 
  *        Keys:
  *          - width  - width of attachment.
@@ -123,7 +123,7 @@
  *     URL which points to the thumbnail file.
  
  * @param attributes
- *     Dictionary with additional information about source file.
+ *     Dictionary with additional information about source media.
  
  * @param identifier
  *     ID of the attachment file.
@@ -151,7 +151,7 @@
  *     URL which points to the thumbnail file.
  
  * @param size
- *     Size (dimentions) of the source file.
+ *     Size (dimentions) of the source media.
  
  * @param identifier
  *     ID of the attachment file.
@@ -177,7 +177,7 @@
  *     URL which points to the thumbnail file.
  
  * @param size
- *     Size (dimentions) of the source file
+ *     Size (dimentions) of the source media.
  
  * @param identifier
  *     ID of the attachment file.
