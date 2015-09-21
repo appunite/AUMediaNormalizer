@@ -56,4 +56,11 @@
     return [NSURL URLWithString:_coverPath relativeToURL:[AUMediaProcessing bucketsStoragePath]];
 }
 
+#pragma mark
+#pragma mark Getters
+
+- (CGSize)size {
+    return CGSizeMake([self.attributes[@"width"] floatValue], [self.attributes[@"height"] floatValue]);
+}
+
 @end

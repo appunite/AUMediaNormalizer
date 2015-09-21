@@ -104,6 +104,16 @@
  */
 
 
+/*!
+ 
+ * @property size
+ 
+ * @abstract size (dimentions) of the source media.
+ 
+ */
+
+@property (nonatomic, readonly) CGSize size;
+
 @property (nonatomic, strong, readonly) NSDictionary *attributes;
 
 /*!
