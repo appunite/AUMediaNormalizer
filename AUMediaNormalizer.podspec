@@ -24,8 +24,8 @@ Pod::Spec.new do |s|
   s.source_files = 'Pod/Classes/**/*'
   s.frameworks = 'MobileCoreServices'
   
-  s.dependency 'NYXImagesKit', '~> 2.3'
-  s.dependency 'SDAVAssetExportSession', '~> 0.0.2'
-  s.dependency 'Mantle', '~> 2.0.2'
+  s.dependency 'NYXImagesKit'
+  s.dependency 'SDAVAssetExportSession'
+  s.dependency 'Mantle'
 
 end
