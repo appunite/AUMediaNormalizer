@@ -1,5 +1,0 @@
-#import <Foundation/Foundation.h>
-@interface PodsDummy_Pods_AUMediaNormalizer_Example_SDAVAssetExportSession : NSObject
-@end
-@implementation PodsDummy_Pods_AUMediaNormalizer_Example_SDAVAssetExportSession
-@end
