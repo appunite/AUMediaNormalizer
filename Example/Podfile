@@ -6,7 +6,7 @@ xcodeproj 'AUMediaNormalizer.xcodeproj'
 platform :ios, '7.0'
 inhibit_all_warnings!
 
-pod 'MBProgressHUD', '~> 0.9.1'
+#pod 'MBProgressHUD', '~> 0.9.1'
 pod 'SDAVAssetExportSession', git: 'https://github.com/appunite/SDAVAssetExportSession.git'
 #pod 'NYXImagesKit'
 #pod 'Mantle', '~> 1.4.1'

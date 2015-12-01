@@ -18,7 +18,9 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <MediaPlayer/MediaPlayer.h>
 
-#import "MBProgressHUD.h"
+#import "AUMediaProcessing.h"
+
+//#import "MBProgressHUD.h"
 
 @interface AUViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (strong,nonatomic) NSMutableArray *mediaURLs;
@@ -72,10 +74,10 @@
     if(!movie){
         [_mediaProcessing processImageWithPickerParams:info thumbnailBlock:_thumbnailBlock];
     }else{
-        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+//        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [_mediaProcessing processVideoWithPickerParams:info thumbnailBlock:_thumbnailBlock
          completitionBlock:^(NSUUID *process, AVAssetExportSessionStatus status, NSError *error) {
-             [hud hide:YES];
+//             [hud hide:YES];
         }];
         
     }

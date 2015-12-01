@@ -29,13 +29,14 @@
     if (self) {
         // generate random bucket
         _bucket = [[NSUUID UUID] UUIDString];
-
+        
         // create new queue
         _queue = [NSOperationQueue new];
         _queue.maxConcurrentOperationCount = 2;
         
         // set default value
         _thumbnailSize = CGSizeMake(300.0, 300.0);
+        _maxDimension = 1024.f;
     }
     return self;
 }
@@ -53,8 +54,8 @@
 #pragma mark Processing Image
 
 - (NSUUID *)processImageWithPickerParams:(NSDictionary *)info
-                       thumbnailBlock:(void (^)(NSUUID *process, NSURL *fileURL, CGSize size, NSURL *thumbnailURL))block {
-
+                          thumbnailBlock:(void (^)(NSUUID *process, NSURL *fileURL, CGSize size, NSURL *thumbnailURL))block {
+    
     // generate unique process id
     NSUUID *process = [NSUUID UUID];
     
@@ -67,27 +68,27 @@
     [_queue addOperationWithBlock:^{
         // Access the uncropped image from info dictionary and downscale it
         UIImage *originalPhoto = [info objectForKey:UIImagePickerControllerOriginalImage];
-        UIImage *downscaledPhoto = [self downscaleImage:originalPhoto];
-
+        UIImage *downscaledPhoto = [self downscaleImage:originalPhoto dimension:_maxDimension];
+        
         // generate random file paths
         NSURL *photoURL = [self temporaryMediaFileURLWithExtension:@"jpg"];
         NSURL *thumbnailURL = [self temporaryMediaFileURLWithExtension:@"jpg"];
-
+        
         // generate jpeg data
         NSData *jpegData = UIImageJPEGRepresentation(downscaledPhoto, 0.95f);
         
         // write file to temporary localisation
         [jpegData writeToURL:photoURL options:NSDataWritingFileProtectionNone error:NULL];
-
+        
         // crate thumbnale image (aspect fill)
-        UIImage *thumbImage = [self generateThumbnail:downscaledPhoto];
-
+        UIImage *thumbImage = [self generateThumbnail:downscaledPhoto size:_thumbnailSize];
+        
         // generate jpeg data
         jpegData = UIImageJPEGRepresentation(thumbImage, 0.95f);
-
+        
         // write thumbnail to temporary location
         [jpegData writeToURL:thumbnailURL options:NSDataWritingFileProtectionNone error:NULL];
-
+        
         // fire completition block
         dispatch_async(dispatch_get_main_queue(), ^{
             block(process, photoURL, downscaledPhoto.size, thumbnailURL);
@@ -99,10 +100,10 @@
 
 - (NSUUID *)processImageWithPickerParams:(NSDictionary *)info attachmentBlock:(void (^)(AUAttachmentFile *attachmentFile))block{
     return [self processImageWithPickerParams:info
-            thumbnailBlock:^(NSUUID *process, NSURL *fileURL, CGSize size, NSURL *thumbnailURL) {
-                AUAttachmentFile *attachment = [[AUAttachmentFile alloc] initWithImageSourceURL:fileURL coverURL:thumbnailURL size:size identifier:process];
-                block(attachment);
-            }];
+                               thumbnailBlock:^(NSUUID *process, NSURL *fileURL, CGSize size, NSURL *thumbnailURL) {
+                                   AUAttachmentFile *attachment = [[AUAttachmentFile alloc] initWithImageSourceURL:fileURL coverURL:thumbnailURL size:size identifier:process];
+                                   block(attachment);
+                               }];
 }
 
 
@@ -128,7 +129,7 @@
         UIImage *videThumb = [self generateFrameImageFromVideoAsset:mediaURL];
         
         // crate thumbnale image (aspect fill)
-        UIImage *thumbImage = [self generateThumbnail:videThumb];
+        UIImage *thumbImage = [self generateThumbnail:videThumb size:_thumbnailSize];
         
         // generate jpeg data for thumbnail
         NSData *jpegData = UIImageJPEGRepresentation(thumbImage, 0.95f);
@@ -152,27 +153,30 @@
         __block SDAVAssetExportSession *encoder = [SDAVAssetExportSession.alloc initWithAsset:avAsset];
         if(settingsBlock){
             settingsBlock(encoder);
-        }else{
-    
+        }
+        
+        else {
+            
             encoder.outputFileType = AVFileTypeMPEG4;
             encoder.shouldOptimizeForNetworkUse = YES;
             encoder.outputURL = videoURL;
             encoder.videoSettings = @{
-                                      AVVideoCodecKey: AVVideoCodecH264,
-                                      AVVideoWidthKey: @1920,
-                                      AVVideoHeightKey: @1080,
-                                      AVVideoCompressionPropertiesKey: @{
-                                              AVVideoAverageBitRateKey: @6000000,
-                                              AVVideoProfileLevelKey: AVVideoProfileLevelH264High40,
-                                              },
-                                      };
+            AVVideoCodecKey: AVVideoCodecH264,
+            AVVideoWidthKey: @1920,
+            AVVideoHeightKey: @1080,
+            AVVideoCompressionPropertiesKey: @{
+                    AVVideoAverageBitRateKey: @6000000,
+                    AVVideoProfileLevelKey: AVVideoProfileLevelH264High40,
+                },
+            };
             encoder.audioSettings = @{
-                                      AVFormatIDKey: @(kAudioFormatMPEG4AAC),
-                                      AVNumberOfChannelsKey: @2,
-                                      AVSampleRateKey: @44100,
-                                      AVEncoderBitRateKey: @128000,
-                                      };
+                AVFormatIDKey: @(kAudioFormatMPEG4AAC),
+                AVNumberOfChannelsKey: @2,
+                AVSampleRateKey: @44100,
+                AVEncoderBitRateKey: @128000,
+            };
         }
+        
         // call completition block
         [encoder exportAsynchronouslyWithCompletionHandler:^{
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -195,11 +199,11 @@
 - (NSUUID *)processVideoWithPickerParams:(NSDictionary *)info attachmentBlock:(void (^)(AUAttachmentFile *attachmentFile))block encoderSettingsBlock:(void (^)(SDAVAssetExportSession *))settingsBlock completitionBlock:(void (^)(NSUUID *process, AVAssetExportSessionStatus status, NSError *error))processingBlock{
     
     return [self processVideoWithPickerParams:info
-                thumbnailBlock:^(NSUUID *process, NSURL *fileURL, CGSize size, NSURL *thumbnailURL) {
-                    AUAttachmentFile *attachment = [[AUAttachmentFile alloc] initWithVideoSourceURL:fileURL coverURL:thumbnailURL size:size identifier:process];
-                    block(attachment);
-                }
-                encoderSettingsBlock:settingsBlock completitionBlock:processingBlock];
+                               thumbnailBlock:^(NSUUID *process, NSURL *fileURL, CGSize size, NSURL *thumbnailURL) {
+                                   AUAttachmentFile *attachment = [[AUAttachmentFile alloc] initWithVideoSourceURL:fileURL coverURL:thumbnailURL size:size identifier:process];
+                                   block(attachment);
+                               }
+                         encoderSettingsBlock:settingsBlock completitionBlock:processingBlock];
 }
 
 - (NSUUID *)processVideoWithPickerParams:(NSDictionary *)info attachmentBlock:(void (^)(AUAttachmentFile *attachmentFile))block completitionBlock:(void (^)(NSUUID *process, AVAssetExportSessionStatus status, NSError *error))processingBlock{
@@ -220,9 +224,8 @@
     return output;
 }
 
-- (UIImage *)downscaleImage:(UIImage *)image {
-    static CGFloat maxDimension = 1024.f;
-
+- (UIImage *)downscaleImage:(UIImage *)image dimension:(CGFloat)maxDimension {
+    
     //    CGFloat verticalImageRatio = image.size.width / image.size.height;
     CGFloat horizontalImageRatio = image.size.height / image.size.width;
     
@@ -240,14 +243,14 @@
     return image;
 }
 
-- (UIImage *)generateThumbnail:(UIImage *)image  {
-    return [image scaleToSize:_thumbnailSize usingMode:NYXResizeModeAspectFill];
+- (UIImage *)generateThumbnail:(UIImage *)image size:(CGSize)size {
+    return [image scaleToSize:size usingMode:NYXResizeModeAspectFill];
 }
 
 - (NSURL *)temporaryMediaFileURLWithExtension:(NSString *)ext {
     // make sure bucket folder is created
     [self createBucketStoragePath];
-
+    
     // create file URL
     NSURL *baseURL = [AUMediaProcessing bucketsStoragePath];
     NSString *fileName = [[[NSUUID UUID] UUIDString] stringByAppendingPathExtension:ext];

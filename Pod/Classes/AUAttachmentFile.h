@@ -14,7 +14,7 @@
  * @class AUAttachmentFile
  
  * @discussion This class is responsible for storing information about thumbnail image and the original content.
-
+ 
  */
 
 @interface AUAttachmentFile : MTLModel
@@ -59,14 +59,14 @@
 
 @property (nonatomic, strong, readonly) NSString *sourcePath;
 
-/*! 
+/*!
  
  * Getter for URL to source file.
  
  * @result
  *     Returns URL to source file.
  
-*/
+ */
 
 - (NSURL *)sourceURL;
 
@@ -96,7 +96,7 @@
  * @property attributes
  
  * @abstract additional information about source media.
- * @discussion 
+ * @discussion
  *        Keys:
  *          - width  - width of attachment.
  *          - height - height of attachment.
@@ -138,7 +138,7 @@
  * @param identifier
  *     ID of the attachment file.
  
- * @result 
+ * @result
  *     Returns freshly created AUAttachmentFile.
  
  */
