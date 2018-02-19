@@ -37,6 +37,7 @@
         // set default value
         _thumbnailSize = CGSizeMake(300.0, 300.0);
         _maxDimension = 1024.f;
+        _quality = 0.95f
     }
     return self;
 }
@@ -75,7 +76,7 @@
         NSURL *thumbnailURL = [self temporaryMediaFileURLWithExtension:@"jpg"];
         
         // generate jpeg data
-        NSData *jpegData = UIImageJPEGRepresentation(downscaledPhoto, 0.95f);
+        NSData *jpegData = UIImageJPEGRepresentation(downscaledPhoto, _quality);
         
         // write file to temporary localisation
         [jpegData writeToURL:photoURL options:NSDataWritingFileProtectionNone error:NULL];
@@ -84,7 +85,7 @@
         UIImage *thumbImage = [self generateThumbnail:downscaledPhoto size:_thumbnailSize];
         
         // generate jpeg data
-        jpegData = UIImageJPEGRepresentation(thumbImage, 0.95f);
+        jpegData = UIImageJPEGRepresentation(thumbImage, _quality);
         
         // write thumbnail to temporary location
         [jpegData writeToURL:thumbnailURL options:NSDataWritingFileProtectionNone error:NULL];

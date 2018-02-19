@@ -39,6 +39,13 @@
 @property (nonatomic, assign) CGFloat maxDimension;
 
 /*!
+ * @property quality
+ * @abstract The desired quality of a full size output image (default is 0,95).
+ * @abstract Takes values from 0 to 1.
+ */
+@property (nonatomic, assign) CGFloat quality;
+
+/*!
  * @property bucket
  * @abstract File storage path.
  */
