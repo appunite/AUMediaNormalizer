@@ -37,7 +37,7 @@
         // set default value
         _thumbnailSize = CGSizeMake(300.0, 300.0);
         _maxDimension = 1024.f;
-        _quality = 0.95f
+        _quality = 0.95f;
     }
     return self;
 }
